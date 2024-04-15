@@ -6,11 +6,13 @@ import Upcoming_events from "../../global_component/upcoming_events/upcoming_eve
 export default function Dashboard() {
   return (
     <>
-    <div className="dashboard_outer">
-      <Eventblock/>
+     <div className="section_padding">
       <div className="main_container">
-        <Upcoming_events/>
-      </div>
+        <div className="dashboard_outer">
+          <div className="dashboard_table"> <Eventblock/></div> 
+           <div className="event_table"><Upcoming_events/></div>    
+        </div>
+        </div> 
     </div>
     </>
   );
