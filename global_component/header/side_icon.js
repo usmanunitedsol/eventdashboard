@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import Link from "next/link"
 
 const Side_icon = () => {
-    const [sideBar, setSideBar] = useState(true)
+    const [sideBar, setSideBar] = useState(false)
 
   const openMobileMenu = () => {
       setSideBar(true);
