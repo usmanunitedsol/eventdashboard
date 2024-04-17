@@ -1,3 +1,4 @@
+"use client"
 import React from 'react'
 import Event_month_cards from './event_month_cards'
 import Upcoming_block from './upcoming_block'

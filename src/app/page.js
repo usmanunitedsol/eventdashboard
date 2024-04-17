@@ -1,5 +1,3 @@
-import Image from "next/image";
-import Link from 'next/link'
 import Eventblock from "../../global_component/event_table/eventblock";
 import Upcoming_events from "../../global_component/upcoming_events/upcoming_events";
 
