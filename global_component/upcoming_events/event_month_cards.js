@@ -6,14 +6,30 @@ import EventMonthPlaceholder from '../../placeholder/month_event';
 import { getdate } from '../../helper/getdate';
 import { gettime } from '../../helper/gettime';
 
-
 const getmonthevent = (events) => {
   if (!events || events.length === 0) {
     return null;
   }
   
-  let highestRankEvent = events[0]; // Initialize with the first event
-  events.forEach(event => {
+  // Get the current month and year
+  const currentDate = new Date();
+  const currentMonth = currentDate.getMonth() + 1; // JavaScript months are zero-based
+  const currentYear = currentDate.getFullYear();
+
+  // Filter events that belong to the present month and year
+  const presentMonthEvents = events.filter(event => {
+    const eventDate = new Date(event.updated);
+    return eventDate.getMonth() + 1 === currentMonth && eventDate.getFullYear() === currentYear;
+  });
+
+  // If there are no events for the present month, return null
+  if (presentMonthEvents.length === 0) {
+    return null;
+  }
+
+  // Find the highest ranked event among the present month events
+  let highestRankEvent = presentMonthEvents[0]; // Initialize with the first event
+  presentMonthEvents.forEach(event => {
     if (event.rank > highestRankEvent.rank) {
       highestRankEvent = event;
     }
@@ -21,6 +37,7 @@ const getmonthevent = (events) => {
 
   return highestRankEvent;
 };
+
 
 const Event_month_cards = () => {
   const [data, setData] = useState(null)

@@ -25,10 +25,10 @@ const Side_icon = () => {
     if (sideBar === true) {
         sidebarOverlay.classList.add('opened');
     }
-    return () => {
-        sidebarOverlay.removeEventListener('click', closeSideBar);
-        document.body.removeChild(sidebarOverlay);
-    };
+    // return () => {
+    //     sidebarOverlay.removeEventListener('click', closeSideBar);
+    //     document.body.removeChild(sidebarOverlay);
+    // };
 }, [sideBar])
 
   return (
